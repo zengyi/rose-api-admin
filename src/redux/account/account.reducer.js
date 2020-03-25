@@ -19,8 +19,20 @@ const AccountReducer = (state = INITIAL_STATE, action) => {
         activeAccounts: [...state.activeAccounts, action.payload],
         error: null
       };
+    case AccountActionTypes.UPDATE_ACCOUNT_SUCCESS:
+      return {
+        ...state,
+        activeAccounts: [
+          ...state.activeAccounts.filter(
+            account => account.id !== action.payload.id
+          ),
+          action.payload
+        ],
+        error: null
+      };
     case AccountActionTypes.GET_ACCOUNTS_FAILURE:
     case AccountActionTypes.ADD_ACCOUNT_FAILURE:
+    case AccountActionTypes.UPDATE_ACCOUNT_FAILURE:
       return {
         ...state,
         error: action.payload

@@ -28,3 +28,18 @@ export const addAccountFailure = error => ({
   type: AccountActionTypes.ADD_ACCOUNT_FAILURE,
   payload: error
 });
+
+export const updateAccountStart = account => ({
+  type: AccountActionTypes.UPDATE_ACCOUNT_START,
+  payload: account
+});
+
+export const updateAccountSuccess = account => ({
+  type: AccountActionTypes.UPDATE_ACCOUNT_SUCCESS,
+  payload: account
+});
+
+export const updateAccountFailure = error => ({
+  type: AccountActionTypes.UPDATE_ACCOUNT_FAILURE,
+  payload: error
+});

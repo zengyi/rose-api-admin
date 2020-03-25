@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Layout from "../../components/Layout/Layout";
 import Accounts from "../../components/Accounts/Accounts";
-import Acts from "../../components/Accounts/Acts";
+import Editor from "../../components/Editor/Editor";
 import { createStructuredSelector } from "reselect";
 
 import { selectActiveAccounts } from "../../redux/account/account.selectors";
@@ -16,8 +16,8 @@ const Main = props => {
 
   return (
     <Layout>
+      <Editor />
       <Accounts />
-      <Acts />
     </Layout>
   );
 };
